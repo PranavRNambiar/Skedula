@@ -1,0 +1,130 @@
+/*if class is being descibed then .classname else #idName*/
+display-flex, .FormContainers, .form-group,.GroupLeft,.GroupRight{
+    display: flex;
+    
+}
+body {
+    font-size: 13px;
+    line-height: 1.8;
+    background: url(./ReceptionBG.jpg) ;
+    background-size: cover;
+    font-weight: 400;
+    padding:  0;
+    font-family:Arial, Helvetica, sans-serif; 
+  }
+  .FormContainers {
+    width: 100%;
+    height : 500px;
+    position: relative;
+    margin: 0 auto;
+    /*background: rgba(107, 233, 174, 0.55);-*/
+    border-radius: 10px;
+    padding-bottom: 5%;
+}
+
+
+.GroupRight,.GroupLeft{
+    width:50%;
+    float: left;
+}
+.GroupLeft{
+    padding-left: 15%;
+
+
+}
+.GroupRight{
+
+    padding-left:12%;
+    padding-right:3%
+
+}
+.form-group {
+    margin: 0 -15px; }
+
+    .form-group .form-groupL {
+      width: 50%;
+      padding: 0 15px; }
+
+.form-groupL {
+    margin-bottom: 0px;
+    position: relative; } 
+     
+.form-body .label-title {
+    color:#033f30;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    display: block;
+}
+.form-body .form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    color: #05775b;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    outline: none;
+    
+}
+.dropdown-menu{
+    width: 220px;
+}
+.form-body input[type="submit"]
+{
+    border: none;
+    outline: none;
+    margin: 20px;
+    width: 300px;
+    height: 40px;
+    background: #1BBA93;
+    color: #fcfcfc;
+    font-size: 18px;
+    border-radius: 120px;
+    text-align: center;
+}
+.form-groupL input[type="time"],.form-groupM input[type="time"]
+{
+    width: 50%;
+}
+.form-body input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #42d1f5;
+    color: #000;
+}
+
+.logo{
+    width: 125px;
+}
+.name{
+    font-size:30px;
+    color:#29abe2;
+    ;
+    font-weight: bold;
+}
+ul.nav a:hover {
+    background-color: rgb(13, 110, 189);
+}
+.navbar{
+	font-family: ROBOTO;
+    background-color:rgb(29, 147, 243);
+
+}
+.navbar-custom .navbar-nav>.open>a {
+    background-color: rgb(13, 110, 189);
+ }
+.navbar-brand,.navbar-nav li a{
+	color: aliceblue;
+	font-size:18px ;
+	font-family: "ROBOTO";
+}
+  .navbar-toggle { 
+	border-color: rgb(15, 14, 14); 
+	background-image: url(
+         
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='-3 0 40 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} 
+/*Adding a image from th above link with given coordinates and color*/

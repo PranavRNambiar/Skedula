@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- initializing width for devices -->
+  <!-- This gives the browser instructions on how to control the page's dimensions and scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">   <!--Initial zoom level specified by initial scale=1--> 
+  <title>Skedula</title>
+  <!-- Bringing in the Bootrstap CDN -->
+   <!-- Bringing in the Bootrstap CDN-Content Delivery Network; Basiacally adding Bootstrap Cdn to get the basic str instead of downloading and hosting bootstrap on the device -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+  <!-- linking the CSS -->
+  <link rel="stylesheet" type="text/css" href="./homepgwithpass.css">
+  <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  width: 80%;
+  background-image: url("./FooterBG.jpg")
+}
+/*model content is the box that pops up*/
+
+/* The Close Button */
+.close {
+  background-color: #1BBA93;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #42d1f5;
+  text-decoration: none;
+  cursor: pointer;
+
+
+}
+
+/*Cahnge button*/
+#pill1 {
+  background-color: #1BBA93;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+#pill1:hover {
+  background-color: #42d1f5;
+}
+</style>
+</head>
+<body>
+  <!-- initialize the navbar -->
+  <div class='design'><!--Class for modifying the nav bar ribbon-->
+  <nav class="navbar navbar-custom">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./homepgwithpass.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Skedula</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--Data Toggle define the kind of toggling to be included-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="./patientappmtwithpass.html">Book Appointment</a></li>
+        <li><a href="./Patientrschwithpass.html">Reschedule</a></li>
+        <li><a href="./patientrptswithpass.html">Reports</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="idrop">Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+                        <h3 Style="color:#008B8B">Mr. Patient</h3>
+                        <p><a href="#" type="button" id="myBtn" style="color:#008B8B" >Change Password</a></p>
+          </ul>
+        </li>
+        <li><a href="../loginPage.html" >Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- upper portion of website start -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-">
+        <div id="content">
+          <img src="./Logo.png">
+        <h1 id='BName'>Skedula</h1>
+        <h3 id='BName'>Our family, caring for yours</h3>
+        <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- upper portion of website end -->
+
+<!-- about us start -->
+<h1 id="about">About Us</h1>
+
+<p id="aboutcon">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!-- about us end -->
+
+<h2 id="hons">Honors</h2>
+  <hr>
+
+<div id="disrow">
+  <div class="discol">
+    <img src="./COVID.png" alt="" width="200" height="200" />
+    <p>Cured COVID</p>
+  </div>
+  <div class="discol">
+    <img src="./BLOOD.png" alt="" width="200" height="200" />
+    <p>Collected a total of 10,000,000 blood samples</p>
+  </div>
+  <div class="discol">
+    <img src="./CANCER.png" alt="" width="200" height="200" />
+    <p>Cured Breast Cancer</p>
+  </div>
+</div>
+
+<!-- doctor tiles start -->
+<!--The difference between an ID and a class is that an ID is only used to identify one single element in our HTML. IDs are only used when one element on the page should have a particular style applied to it. However, a class can be used to identify more than one HTML element-->
+  <h2 id="meet">Meet our doctors</h2>
+  <hr>
+
+<div class="container" id="roll">
+  <div allign="center;" class="social">
+    <img src="./DOCTOR 3.jpg" alt="" width="200" height="200" />
+    <p>Dr. ABC</p>
+    <p id="spec">Spec1</p>
+  </div>
+  <div allign="center;" class="social">
+    <img src="./DOCTOR 3.jpg" alt="" width="200" height="200" />
+    <p>Dr. XYZ</p>
+    <p id="spec">Spec2</p>
+  </div>
+  <div allign="center;" class="social">
+    <img src="./DOCTOR 3.jpg" alt="" width="200" height="200" />
+    <p>Dr. PQR</p>
+    <p id="spec">Spec3</p>
+  </div>
+  <div allign="center;" class="social">
+    <img src="./DOCTOR 3.jpg" alt="" width="200" height="200" />
+    <p>Dr. OTP</p>
+    <p id="spec">Spec4</p>
+  </div>
+  <div allign="center;" class="social">
+    <img src="./DOCTOR 3.jpg" alt="" width="200" height="200" />
+    <p>Dr. VPN</p>
+    <p id="spec">Spec5</p>
+  </div>
+</div>
+
+<!-- doctor tiles end -->
+
+
+<!-- website footer start -->
+
+    <footer class="site_footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+            <h2 style="size: 20px; padding-left: 47px">Contact us</h2>
+            <ul>
+              <li>4475893989</li>
+              <li>7364927377</li>
+              <li>drhearts12111@gmail.com</li>
+            </ul>
+            </div>
+            <div class="col-md-4">
+              <h2 id="slogan">"To heal is our birthright"</h2>
+            </div>
+            <div class="col-md-4">
+            <h2 id="footleft">Address</h2>
+            <p style="font-size: 16px">Baking St., 1466 Ave Road</p>
+            <p style="font-size: 16px">New Guinea, United States</p>
+          </div>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p>COPYRIGHT SKEDULA &reg; 2020. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <!-- <span class="close">&times;</span>
+    <input type="text" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+    <input type="text" name="confirmpass" type="password" placeholder="Confirm Password" required>
+    <a href="#" type="button" id="pill1">Change</a> -->
+    <form action="" method="" form id="myForm">
+      <span class="close">&times;</span>
+      <input type="password" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+      <input type="password" name="confirmpass" type="password" placeholder="Confirm Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+      <input type="submit" name="login" value="Change" id="pill1">
+    </form>
+  </div>
+
+</div>
+
+<script>
+// Get the modal-->password box pop up
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal--->change password
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal-->close button
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal--> Function definition's ahead 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  document.getElementById("myForm").reset(); 
+  modal.style.display = "none";
+  
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    document.getElementById("myForm").reset();
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+<!-- website footer end -->
+
+<!-- bringing in the scripts like jquery in, for getting the moving parts like dropdowns and collapsing the navbar for mobile devices,Supports Bootstrap frontend framework-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

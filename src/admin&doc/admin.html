@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- initializing width for devices -->
+  <!-- This gives the browser instructions on how to control the page's dimensions and scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">   <!--Initial zoom level specified by initial scale=1--> 
+  <title>Skedula</title>
+  <!-- Bringing in the Bootrstap CDN -->
+   <!-- Bringing in the Bootrstap CDN-Content Delivery Network; Basiacally adding Bootstrap Cdn to get the basic str instead of downloading and hosting bootstrap on the device -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+  <!-- linking the CSS -->
+  <link rel="stylesheet" type="text/css" href="./admin.css">
+</head>
+<body>
+  <!-- initialize the navbar -->
+  <div class='design'><!--Class for modifying the nav bar ribbon-->
+    <!DOCTYPE html>
+    <html lang="en">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <head>
+      <title>Bootstrap Example</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    
+    <style>
+    
+    .active  {
+      background-color: #3c93ad;
+    }
+    /* Button used to open the contact form - fixed at the bottom of the page */
+    .open-button {
+      background-color: rgb(63, 158, 202);
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+     
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    
+    /* The popup form - hidden by default */
+    .navbar{
+      font-family: ROBOTO;
+        background-color: #53acca;
+        padding-left: 50px !important;
+       padding-right: 50px ;
+        
+    }
+    .navbar-brand {
+    font-size: 30px;
+    
+    }
+    /* Modify brand and text color */ 
+    .navbar-custom .navbar-brand, .navbar-custom .navbar-text,.navbar-nav li a { 
+        color: #010405a4; 
+    } 
+    .navbar-brand,.navbar-nav {
+      color: rgb(2, 3, 5);
+      font-size:18px ;
+      font-family: "ROBOTO";
+    }
+    
+    .form-popup {
+      
+            
+            display:none;
+            top:100px; 
+            right:60%;
+            left:40%;
+            width:300px;
+            position:fixed; 
+            z-index: 2000;
+            padding:30px; 
+            -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);
+            -moz-box-shadow:0 0 10px rgba(0,0,0,0.4); 
+            box-shadow:0 0 10px rgba(0,0,0,0.4)
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+    
+    /* Full-width input fields */
+    .form-container input[type=text], .form-container input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+    
+    /* When the inputs get focus, do something */
+    .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: #3c93ad;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+      opacity: 0.8;
+    }
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color:#2e748a;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+      opacity: 1;
+    }
+    
+    
+    </style>
+    <body>
+       
+    <nav class="navbar navbar-custom">
+      <div class="container-fluid">
+        
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          
+          
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                        <h3 Style="color:#0d6161" align="center">Patient Name</h3>
+                        <p><button class="open-button" onclick="openForm()">Change Password</button>
+    
+                        </p>
+                        
+          </ul>
+          <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h3>Change Password</h3>
+              <input type="password" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+              <input type="password" name="confirmpass" type="password" placeholder="Confirm Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+          
+              <button type="submit" class="btn">Confirm</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+             
+          <li><a href="../loginPage.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    
+    
+    
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    
+    </body>
+    </html>
+    
+    
+    
+
+    <div style="text-align: center"><img src="./logo2.png" alt="logo" class="logo"></div>
+    <div style="text-align: center" class="name">Skedula</div>
+    <!--Inital logo and Title Completed-->
+
+    <div class="btn-group" style ="float:centre;">
+     
+            <button type="button" >View</button>
+         
+         
+
+ 
+
+  
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Edit
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a id="demo" href="#patient" onclick="myFunction1()">Patient</a>
+      <a href="#doctor"onclick="myFunction2()">Doctor</a>
+      <a href="#recep"onclick="myFunction3()">Receptionist</a>
+    </div>
+  </div>
+  <div id="demox">
+      <body>
+        <div class="schedulebox"> <!--creating a class called login box-->
+        
+            <h1>Please fill the details</h1>
+            <form action="" method="">
+                <p>Patient ID</p>
+                <input type="text" name="Uname" placeholder="Enter Patient ID" required  minlength="4" maxlength="4">
+                <p>Date</p>
+                <input type="date" id="myDate">
+                <p>Time </p>
+                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                <p>Specialization</p>
+                
+                <select id="dropdown">
+                    <option value="spec1">spec1</option>
+                    <option value="spec2">spec2</option>
+                    <option value="spec3">spec3</option>
+                    <option value="spec4">spec4</option>
+                    <option value="spec5">spec5</option>
+                  </select>
+                  
+                      <p>Doctor</p>
+                         
+                        <select id="dropdown">
+                            <option value="doc1">doc1</option>
+                            <option value="doc2">doc2</option>
+                            <option value="doc3">doc3</option>
+                            <option value="doc4">doc4</option>
+                            <option value="doc5">doc5</option>
+                          </select>
+                 
+                <input type="submit" name="Book" value="Update Patient Information">
+            
+            </form>
+        </div>
+    </body>
+    </html>
+  </div>
+
+  
+    <div id="eemox">
+      <body>
+        <div class="schedulebox"> <!--creating a class called login box-->
+        
+            <h1>Please fill the details</h1>
+            <form action="" method="">
+                <p>Patient ID</p>
+                <input type="text" name="Uname" placeholder="Enter Patient ID" required  minlength="4" maxlength="4">
+                <p>Date</p>
+                <input type="date" id="myDate">
+                <p>Time </p>
+                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                <p>Specialization</p>
+                
+                <select id="dropdown">
+                    <option value="spec1">spec1</option>
+                    <option value="spec2">spec2</option>
+                    <option value="spec3">spec3</option>
+                    <option value="spec4">spec4</option>
+                    <option value="spec5">spec5</option>
+                  </select>
+                  
+                      <p>Doctor</p>
+                         
+                        <select id="dropdown">
+                            <option value="doc1">doc1</option>
+                            <option value="doc2">doc2</option>
+                            <option value="doc3">doc3</option>
+                            <option value="doc4">doc4</option>
+                            <option value="doc5">doc5</option>
+                          </select>
+                 
+                <input type="submit" name="Book" value="Update Patient Information">
+            
+            </form>
+        </div>
+    </body>
+    </html>
+  </div>  
+  
+  <div>
+    <div id="femox">
+      <body>
+        <div class="schedulebox"> <!--creating a class called login box-->
+        
+            <h1>Please fill the Receptionist details</h1>
+            <form action="" method="">
+                <p>Patient ID</p>
+                <input type="text" name="Uname" placeholder="Enter Patient ID" required  minlength="4" maxlength="4">
+                <p>Date</p>
+                <input type="date" id="myDate">
+                <p>Time </p>
+                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                <p>Specialization</p>
+                
+                <select id="dropdown">
+                    <option value="spec1">spec1</option>
+                    <option value="spec2">spec2</option>
+                    <option value="spec3">spec3</option>
+                    <option value="spec4">spec4</option>
+                    <option value="spec5">spec5</option>
+                  </select>
+                  
+                      <p>Doctor</p>
+                         
+                        <select id="dropdown">
+                            <option value="doc1">doc1</option>
+                            <option value="doc2">doc2</option>
+                            <option value="doc3">doc3</option>
+                            <option value="doc4">doc4</option>
+                            <option value="doc5">doc5</option>
+                          </select>
+                 
+                <input type="submit" name="Book" value="Update Patient Information">
+            
+            </form>
+        </div>
+    </body>
+    </html>
+    
+  </div>
+  <script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  
+  </script>
+ <script>
+  function myFunction1() {
+    var x = document.getElementById("demox");
+   
+              if (x.style.display === "none" ) {
+                x.style.display = "block";
+                
+              } else {
+                x.style.display = "none";
+              }
+            }
+ function myFunction2() {
+    var y = document.getElementById("eemox");
+    
+              if (y.style.display === "none" ) {
+                x.style.display = "none";
+                y.style.display = "block";
+                x.style.display = "none";
+                
+              } else {
+                y.style.display = "none";
+              }
+            }
+ function myFunction3(){   
+    var z = document.getElementById("femox");
+              if (z.style.display === "none" ) {
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "block";
+                
+                
+              }
+               else {
+                z.style.display = "none";
+              }
+            }
+  
+  
+
+  </script>
+  
+ 
+
+    
+
+<!-- bringing in the scripts like jquery in, for getting the moving parts like dropdowns and collapsing the navbar for mobile devices,Supports Bootstrap frontend framework-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
