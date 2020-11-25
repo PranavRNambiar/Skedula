@@ -8,13 +8,88 @@
     <div class="loginbox"> <!--creating a class called login box-->
     <img src="./logo1.png" alt="Logo" class="Logo"><!--creating a logo class to modify the logo-->
         <h1>Welcome</h1>
-        <form action="./ProfileSettingspage.html" method="">
+        <form action="#" method="">
             <p>User name</p>
             <input type="text" name="Uname" placeholder="Enter Username" required>
             <p>Password</p>
             <input type="password" name="pwd" pattern="[a-zA-Z0-9]+" placeholder="Enter password" title="Invalid Password" maxlength="10" required>
-            <input type="submit" name="Login" value="Login">
+            <input type="submit"id="action-btn" name="Login" value="Login">
             <a class="redirect" href="./ProfileSettingspage.html">New User ?</a>
+            <table id="table" border="1">
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <script>
+                 var mysql = require('mysql');
+
+function el(selector) {
+    return document.getElementById(selector);
+}
+
+el('action-btn').addEventListener('click', function(){
+    // Get the mysql service
+    getFirstTenRows(function(rows){
+        var html = '';
+
+        rows.forEach(function(row){
+            html += '<tr>';
+            html += '<td>';
+            html += row.AID;
+            html += '</td>';
+            html += '<td>';
+            html += row.pwd;
+            html += '</td>';
+            html += '</tr>';
+            html += row.fName;
+            console.log(row);
+        });
+
+        document.querySelector('#table > tbody').innerHTML = html;
+    });
+},false);
+
+function getFirstTenRows(callback){
+    var mysql = require('mysql');
+
+    // Add the credentials to access your database
+    var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : null,
+        database : 'hmsdb'
+    });
+
+    // connect to mysql
+    connection.connect(function(err) {
+        // in case of error
+        if(err){
+            console.log(err.code);
+            console.log(err.fatal);
+        }
+    });
+
+    // Perform a query
+    $query = 'SELECT * FROM `admin` ';
+
+    connection.query($query, function(err, rows, fields) {
+        if(err){
+            console.log("An error ocurred performing the query.");
+            console.log(err);
+            return;
+        }
+
+        callback(rows);
+
+        console.log("Query succesfully executed");
+    });
+
+    // Close the connection
+    connection.end(function(){
+        // The connection has been closed
+    });
+}
+            </script>
         </form>
     </div>
 </body>
