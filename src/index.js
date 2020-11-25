@@ -18,7 +18,7 @@ const createWindow = () => {
   });
 
   // and load the loginPage.html of the app.
-  mainWindow.loadFile(path.join(__dirname, './admin&doc/admin.html'));
+  mainWindow.loadFile(path.join(__dirname, './login/loginPage.html'));
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
