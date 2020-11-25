@@ -10,46 +10,67 @@
         <h1>Welcome</h1>
         <form action="#" method="">
             <p>User name</p>
-            <input type="text" name="Uname" placeholder="Enter Username" required>
+            <input type="text" name="Uname" placeholder="Enter Username" id="Username" required>
             <p>Password</p>
-            <input type="password" name="pwd" pattern="[a-zA-Z0-9]+" placeholder="Enter password" title="Invalid Password" maxlength="10" required>
-            <input type="submit"id="action-btn" name="Login" value="Login">
+            <input type="password" name="pwd" pattern="[a-zA-Z0-9]+" placeholder="Enter password" title="Invalid Password" id="password" maxlength="10" required>
+            <input type="submit"id="action-btn" onclick="getInfo()" name="Login" value="Login">
             <a class="redirect" href="./ProfileSettingspage.html">New User ?</a>
-            <table id="table" border="1">
-                <tbody>
-                    
-                </tbody>
-            </table>
+
             <script>
-                 var mysql = require('mysql');
+                
+                function getInfo(){
+                var Uname=document.getElementsById("Username").value;
+                 var pwd=document.getElementsById("password").value;
+                 console.log(uname);
+                var mysql = require('mysql');
+                function el(selector) {
+                return document.getElementById(selector);
+                }
+                var fstr=uname.charAt(0);
+                var n=str.length;
+                if(n!=4)
+                {
+                        alert("Invalid Username/Password");
+                }
+                else{
+                
+                            if(fstr=='A'){
+                                var str=getA();
+                                if(str!=pwd)
+                                {
+                                    alert("Invalid Username/Password");
+                                }
+                                else{
+                                    window.location.replace(".admin&doc/admin.html");
+                                    
+                                }
+                            }
+                            else
+                            if(fstr=='D'){
+                                var str=getD();
+                                if(str!=pwd)
+                                {
+                                    alert("Invalid Username/Password");
+                                }
+                                else{
+                                    window.location.replace(".admin&doc/doctor.html");
+                                }
+                            }
 
-function el(selector) {
-    return document.getElementById(selector);
+                            else                            
+                            if(fstr=='R'){
+                                var str=getR();
+                                if(str!=pwd)
+                                {
+                                    alert("Invalid Username/Password");
+                                }
+                                else{
+                                    window.location.replace(".Receptionist Interface/receptionist.html");
+                                }
+                            }
+                }
 }
-
-el('action-btn').addEventListener('click', function(){
-    // Get the mysql service
-    getFirstTenRows(function(rows){
-        var html = '';
-
-        rows.forEach(function(row){
-            html += '<tr>';
-            html += '<td>';
-            html += row.AID;
-            html += '</td>';
-            html += '<td>';
-            html += row.pwd;
-            html += '</td>';
-            html += '</tr>';
-            html += row.fName;
-            console.log(row);
-        });
-
-        document.querySelector('#table > tbody').innerHTML = html;
-    });
-},false);
-
-function getFirstTenRows(callback){
+function getA(callback){
     var mysql = require('mysql');
 
     // Add the credentials to access your database
@@ -70,7 +91,7 @@ function getFirstTenRows(callback){
     });
 
     // Perform a query
-    $query = 'SELECT * FROM `admin` ';
+    $query = 'SELECT pwd FROM `admin` WHERE AID="uname" ';
 
     connection.query($query, function(err, rows, fields) {
         if(err){
@@ -89,8 +110,93 @@ function getFirstTenRows(callback){
         // The connection has been closed
     });
 }
-            </script>
+function getR(callback){
+    var mysql = require('mysql');
+
+    // Add the credentials to access your database
+    var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : null,
+        database : 'hmsdb'
+    });
+
+    // connect to mysql
+    connection.connect(function(err) {
+        // in case of error
+        if(err){
+            console.log(err.code);
+            console.log(err.fatal);
+        }
+    });
+
+    // Perform a query
+    $query = 'SELECT pwd FROM `reciptionist` WHERE RID="uname" ';
+
+    connection.query($query, function(err, rows, fields) {
+        if(err){
+            console.log("An error ocurred performing the query.");
+            console.log(err);
+            return;
+        }
+
+        callback(rows);
+
+        console.log("Query succesfully executed");
+    });
+
+    // Close the connection
+    connection.end(function(){
+        // The connection has been closed
+    });
+}
+
+function getD(callback){
+    var mysql = require('mysql');
+
+    // Add the credentials to access your database
+    var connection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : null,
+        database : 'hmsdb'
+    });
+
+    // connect to mysql
+    connection.connect(function(err) {
+        // in case of error
+        if(err){
+            console.log(err.code);
+            console.log(err.fatal);
+        }
+    });
+
+    // Perform a query
+    $query = 'SELECT pwd FROM `doctor` WHERE DocID="uname" ';
+
+    connection.query($query, function(err, rows, fields) {
+        if(err){
+            console.log("An error ocurred performing the query.");
+            console.log(err);
+            return;
+        }
+
+        callback(rows);
+
+        console.log("Query succesfully executed");
+    });
+
+    // Close the connection
+    connection.end(function(){
+        // The connection has been closed
+    });
+}
+
+</script>
         </form>
     </div>
 </body>
 </html>
+
+
+
