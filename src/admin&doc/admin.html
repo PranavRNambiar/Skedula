@@ -15,16 +15,10 @@
   <!-- initialize the navbar -->
   <div class='design'><!--Class for modifying the nav bar ribbon-->
   <nav class="navbar navbar-custom">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container-fluid">
+    <!-- No mabile display considered-->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Skedula</a>
+      <a class="navbar-brand" href="./receptionist.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Skedula</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,19 +26,41 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Profile<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <div style="text-align: center"><img src="admin.png" alt="Picture" class = "pic"> <!--Add a path to the reciptionst image from backend based of the reciptionst login-->
-                        <p Style="color:#008B8B">Admin</p>
+                                              <!--Add a path to the reciptionst id from backend based of the reciptionst login-->
+                        <h3 Style="color:#0d6161" align="center">Admin Name</h3>
+                        <h5 Style="color:#0d6161" align="center"Admin ID</h5>
+
           </ul>
         </li>
         <li><a href="../Login/loginPage.html">Logout</a></li>
         </ul>
         </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div><!-- /.container -->
     </nav>
 
-    <div style="text-align: center"><img src="./logo2.png" alt="logo" class="logo"></div>
+  
+    
+    
+    
+    <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    
+    </body>
+    </html>
+    
+    
+    
+
+    <div style="text-align: center"><img src="./logofinal.png" alt="logo" class="logo"></div>
     <div style="text-align: center" class="name">Skedula</div>
     <!--Inital logo and Title Completed-->
 
@@ -61,52 +77,74 @@
     <button onclick="myFunction()" class="dropbtn">Edit
     </button>
     <div id="myDropdown" class="dropdown-content">
-      <a id="demo" href="#patient" onclick="myFunctionq()">Patient</a>
-      <a href="#doctor">Doctor</a>
-      <a href="#recep">Receptionist</a>
+      <a id="demo" href="#patient" onclick="myFunction1()">Patient</a>
+      <a href="#doctor"onclick="myFunction2()">Doctor</a>
+      <a href="#recep"onclick="myFunction3()">Receptionist</a>
     </div>
   </div>
-  <div>
-    <div id="demox">
-      <body>
-        <div class="schedulebox"> <!--creating a class called login box-->
-        
-            <h1>Please fill the details</h1>
-            <form action="" method="">
-                <p>Patient ID</p>
-                <input type="text" name="Uname" placeholder="Enter Patient ID" required  minlength="4" maxlength="4">
-                <p>Date</p>
-                <input type="date" id="myDate">
-                <p>Time </p>
-                <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-                <p>Specialization</p>
-                
-                <select id="dropdown">
-                    <option value="spec1">spec1</option>
-                    <option value="spec2">spec2</option>
-                    <option value="spec3">spec3</option>
-                    <option value="spec4">spec4</option>
-                    <option value="spec5">spec5</option>
-                  </select>
-                  
-                      <p>Doctor</p>
-                         
-                        <select id="dropdown">
-                            <option value="doc1">doc1</option>
-                            <option value="doc2">doc2</option>
-                            <option value="doc3">doc3</option>
-                            <option value="doc4">doc4</option>
-                            <option value="doc5">doc5</option>
-                          </select>
-                 
-                <input type="submit" name="Book" value="Update Patient Information">
-            
-            </form>
-        </div>
-    </body>
-    </html>
-    
-    </div>
+  <div id="demox">
+    <body>
+      <div class="schedulebox"> <!--creating a class called login box-->
+      
+          <h1>Please fill the Patient details</h1>
+          <form action="" method="">
+              <p>First Name</p>
+              <input type="text" name="Uname" placeholder="Update the name" >
+              <p>Second Name</p>
+              <input type="text" name="Uname1" placeholder="Update the name" >
+              <p>Password</p>
+              <input type="text" name="Uname2" placeholder="Update password" >
+              <br/>
+              <button type="submit" class="registerbtn3">Update the changes</button>
+          
+          </form>
+      </div>
+  </body>
+  </html>
+</div>
+
+
+  <div id="eemox">
+    <body>
+      <div class="schedulebox"> <!--creating a class called login box-->
+      
+          <h1>Please fill the Doctor details</h1>
+          <p>First Name</p>
+              <input type="text" name="Uname" placeholder="Update the name" >
+              <p>Second Name</p>
+              <input type="text" name="Uname1" placeholder="Update the name" >
+              <p>Password</p>
+              <input type="text" name="Uname2"  placeholder="Update password"  maxlength="10" required>
+              <br/>
+              <button type="submit" class="registerbtn3">Update the changes</button>
+          
+          </form>
+      </div>
+  </body>
+  </html>
+</div>  
+
+<div>
+  <div id="femox">
+    <body>
+      <div class="schedulebox"> <!--creating a class called login box-->
+      
+          <h1>Please fill the Receptionist details</h1>
+          <p>First Name</p>
+              <input type="text" name="Uname" placeholder="Update the name" >
+              <p>Second Name</p>
+              <input type="text" name="Uname1" placeholder="Update the name" >
+              <p>Password</p>
+              <input type="text" name="Uname2" placeholder="Update password" >
+              <br/>
+              <button type="submit" class="registerbtn3">Update the changes</button>
+          
+          </form>
+      </div>
+  </body>
+  </html>
+  
+</div>
   <script>
   /* When the user clicks on the button, 
   toggle between hiding and showing the dropdown content */
@@ -130,15 +168,50 @@
   
   </script>
  <script>
-  function myFunctionq() {
-    var x = document.getElementById("demox");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+   var x = document.getElementById("demox");
+   var y= document.getElementById("eemox");
+   var z = document.getElementById("femox");
+  function myFunction1() {
+  
+   
+              if (x.style.display === "none" ) {
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "none"
+              } else {
+                x.style.display = "none";
+              }
+            }
+ function myFunction2() {
+    
+    
+              if (y.style.display === "none" ) {
+                x.style.display = "none";
+                y.style.display = "block";
+                z.style.display = "none";
+                
+              } else {
+                y.style.display = "none";
+              }
+            }
+ function myFunction3(){   
+    
+              if (z.style.display === "none" ) {
+                y.style.display = "none";
+                x.style.display = "none";
+                z.style.display = "block";
+                
+                
+              }
+               else {
+                z.style.display = "none";
+              }
+            }
+  
+  
+
   </script>
+  
  
 
     
