@@ -87,14 +87,14 @@
                       rows.forEach(function(row){
                           html += '<tr>';
                           html += '<td>';
-                          html += row.AID;
+                          html += row.DocID;
                           html += '</td>';
                           html += '<td>';
-                          html += row.pwd;
+                          html += row.fName;
                           html += '</td>';
                           html += '</tr>';
-                          html += row.fName;
-                          console.log(row);
+                          
+
                       });
       
                       document.querySelector('#table > tbody').innerHTML = html;
@@ -122,7 +122,7 @@
                   });
       
                   // Perform a query
-                  $query = 'SELECT * FROM `admin` ';
+                  $query = 'SELECT * FROM `doctor` ';
       
                   connection.query($query, function(err, rows, fields) {
                       if(err){
@@ -141,7 +141,7 @@
                       // The connection has been closed
                   });
               }
-          </script>
+          </script> 
          
 
  
