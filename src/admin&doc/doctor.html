@@ -161,7 +161,7 @@ function closeForm() {
 
 
 
-    <form action="action_page.php">
+    <form >
         <div class="container">
           <h1>Reports</h1>
           <hr>
@@ -169,7 +169,7 @@ function closeForm() {
         <input type="chars"name="Uname" required  minlength="4" maxlength="8">
       <button class="registerbtn1">View</button>
      
-      <button class="registerbtn2"onclick="myFunctionq()"" >Update</button>
+      <button class="registerbtn2"onclick="myFunctionq()" >Edit</button>
       <div id="demox">
         <body>
           <div class="schedulebox"> <!--creating a class called login box-->
@@ -177,8 +177,8 @@ function closeForm() {
               
               <form action="" method="">
                  
-                  <input type="text" name="Uname" placeholder="Enter the changes you want to update" required  minlength="4" maxlength="4">
-                
+                  <input type="text" name="Uname" placeholder="Enter the changes you want to update" required  minlength="4" >
+                  <button class="registerbtn1" >Update</button>
               </form>
               
           </div>
@@ -203,7 +203,7 @@ function closeForm() {
         
          
           <hr>
-      
+          <form action="" method="">
           <label for="time"><b>Start Time</b></label>
           <input type="time" placeholder="Enter Time" name="email" id="email" required>
       
@@ -214,3 +214,5 @@ function closeForm() {
           <input type="time" placeholder="Maximum" name="psw-repeat" id="psw-repeat" required>
           <hr>
           <button type="submit" class="registerbtn3">Update the changes</button>
+          </form>
+        
