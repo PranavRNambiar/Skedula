@@ -2,6 +2,14 @@ display-flex, .FormContainers, .form-group,.GroupLeft,.GroupRight{
   display: flex;
   
 }
+body{
+  margin: 0;
+  padding: 0;
+  background: url(./download.jfif);
+  background-size:cover;
+  background-position: center;
+  
+}
 
 .logo{
   width: 160px;
@@ -215,6 +223,21 @@ left:900px;
     
       
       }
+  .table,th, td{
+     
+      border: 1px solid black;
+      position: center;
+      }
+      th, td {
+      padding: 40px;
+      background-color: #1c2541;
+      color:white;
+      }
+ 
+     
+
+
+  
 
 .navbar-toggle { 
 	border-color: white; 
