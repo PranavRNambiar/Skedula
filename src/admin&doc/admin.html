@@ -247,7 +247,7 @@
                   });
       
                   // Perform a query
-                  $query = 'DELETE FROM `doctor`where `fName`="Update" ';
+                  $query = 'DELETE FROM `doctor`where `DocID`="D001" ';
       
                   connection.query($query, function(err, rows, fields) {
                       if(err){
@@ -288,7 +288,7 @@
                   });
                 
                   // Perform a query
-                  $query = 'INSERT INTO `doctor`(`DocID`,`pwd`,`fName`,`sName`,`Spec`) VALUES ("D006","digialph","Raj","Kapoor","ORT") ';
+                  $query = 'INSERT INTO `doctor`(`DocID`,`pwd`,`fName`,`sName`,`Spec`) VALUES ("D008","digialph","Raj","Kapoor","ORT") ';
       
                   connection.query($query, function(err, rows, fields) {
                       if(err){
