@@ -7,10 +7,12 @@
   <title>Skedula</title>
   <!-- Bringing in the Bootrstap CDN -->
    <!-- Bringing in the Bootrstap CDN-Content Delivery Network; Basiacally adding Bootstrap Cdn to get the basic str instead of downloading and hosting bootstrap on the device -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <!-- linking the CSS -->
   <link rel="stylesheet" type="text/css" href="./homepgwithpass.css">
-  <style>
+<!--   <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -74,51 +76,51 @@ body {
 #pill1:hover {
   background-color: #42d1f5;
 }
-</style>
+</style> -->
 </head>
 <body>
-  <!-- initialize the navbar -->
-  <div class='design'><!--Class for modifying the nav bar ribbon-->
+    <div class='design'>
   <nav class="navbar navbar-custom">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./homepgwithpass.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Skedula</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <!--Data Toggle define the kind of toggling to be included-->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="container-fluid">
+      
       <ul class="nav navbar-nav">
-        <li><a href="./patientappmtwithpass.html">Book Appointment</a></li>
+        <li><a href="./homepgwithpass.html"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Skedula</a>
+        </li>
+        <li class="active"><a href="#">New Appointment</a></li>
         <li><a href="./Patientrschwithpass.html">Reschedule</a></li>
         <li><a href="./patientrptswithpass.html">Reports</a></li>
+        
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="idrop">Profile<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-                        <h3 Style="color:#008B8B">Mr. Patient</h3>
-                        <p><a href="#" type="button" id="myBtn" style="color:#008B8B" >Change Password</a></p>
-          </ul>
-        </li>
-        <li><a href="../Login/loginPage.html" >Logout</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                      <h3 Style="color:#0d6161" align="center">Patient Name</h3>
+                      <p><button class="open-button"  onclick="openForm()">Change Password</button>
+  
+                      </p>
+                      
+        </ul>
+        <div class="form-popup" id="myForm">
+          <form action="" class="form-container">
+            <h3 Style="color:#0d6161">Change Password</h3>
+            <input type="password" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+            <input type="password" name="confirmpass" type="password" placeholder="Confirm Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
+        
+            <button type="submit" class="btn">Confirm</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+           
+        <li><a href="../Login/loginPage.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </nav>
 <!-- upper portion of website start -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-sm-">
         <div id="content">
-          <img src="./Logo.png">
+          <img src="./logo final.png">
         <h1 id='BName'>Skedula</h1>
         <h3 id='BName'>Our family, caring for yours</h3>
         <hr>
@@ -127,22 +129,13 @@ body {
     </div>
   </div>
 </div>
+</div>
 <!-- upper portion of website end -->
 
 <!-- about us start -->
 <h1 id="about">About Us</h1>
 
-<p id="aboutcon">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p id="aboutcon">HospitalX - "Home for total Healing" is a multi-disciplinary medical network of pedagogical, therapeutic, research and outreach programmes.We recognize the values of human life and our approach to the patients is accordingly framed as a model to others by inculcating a spirit of love and care for the diseased and the destitute. We will work with selflessness, righteousness, integrity, team-spirit and mutual respect. Our conduct will be erected on the plinth of highest ethical standard. We will update our knowledge, and our perspectives will be always anchored to the concept of Epistemological Revolution.The services are done in a much lower cost than other hospitals AIMS brings together a dedicated team of physicians, nurses,and other healthcare professionals to provide the highest standards of medical treatment. Our full range of primary and speciality care medical services enables cross-speciality consultation, which assures outstanding treatment for each patient. Our extensive infrastructure offers extensive facilities comprising 25 modern operating theatres, 210 equipped intensive-care beds and networked Hospital Information System (HIS),and a radiology department.We are looking foward to change the healthcare sector of Thrissur with our constant effort. </p>
 <!-- about us end -->
 
 <h2 id="hons">Honors</h2>
@@ -151,7 +144,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <div id="disrow">
   <div class="discol">
     <img src="./COVID.png" alt="" width="200" height="200" />
-    <p>Cured COVID</p>
+    <p>Cured COVID-19</p>
   </div>
   <div class="discol">
     <img src="./BLOOD.png" alt="" width="200" height="200" />
@@ -224,60 +217,26 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
     <div class="row">
       <div class="col-sm-12">
-        <p>COPYRIGHT SKEDULA &reg; 2020. ALL RIGHTS RESERVED</p>
+        <p style="color: white">COPYRIGHT SKEDULA &reg; 2020. ALL RIGHTS RESERVED</p>
       </div>
     </div>
   </div>
 </footer>
 
-  <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <!-- <span class="close">&times;</span>
-    <input type="text" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
-    <input type="text" name="confirmpass" type="password" placeholder="Confirm Password" required>
-    <a href="#" type="button" id="pill1">Change</a> -->
-    <form action="" method="" form id="myForm">
-      <span class="close">&times;</span>
-      <input type="password" name="Newpass" type="password" placeholder="New Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
-      <input type="password" name="confirmpass" type="password" placeholder="Confirm Password" pattern="[a-zA-Z0-9]+" maxlength="10" required>
-      <input type="submit" name="login" value="Change" id="pill1">
-    </form>
-  </div>
-
-</div>
 
 <script>
-// Get the modal-->password box pop up
-var modal = document.getElementById("myModal");
+        
 
-// Get the button that opens the modal--->change password
-var btn = document.getElementById("myBtn");
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
 
-// Get the <span> element that closes the modal-->close button
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal--> Function definition's ahead 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  document.getElementById("myForm").reset(); 
-  modal.style.display = "none";
-  
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    document.getElementById("myForm").reset();
-    modal.style.display = "none";
-  }
-}
-</script>
+      </script>
 
 
 
@@ -286,5 +245,6 @@ window.onclick = function(event) {
 
 <!-- bringing in the scripts like jquery in, for getting the moving parts like dropdowns and collapsing the navbar for mobile devices,Supports Bootstrap frontend framework-->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ -->
