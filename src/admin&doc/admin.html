@@ -229,7 +229,6 @@
     
   function updateFunctionR(){
     var formData=getdata();
-    console.log(formData["fnameR"])
     var sql=require('mysql')
     var con=sql.createConnection({
       host     : 'localhost',
@@ -245,9 +244,7 @@
       {
         if(err) throw err;
         console.log("Record updated");
-      })
-
-    })
+      })    })
   }
   function getdata(){
       var formData={};
