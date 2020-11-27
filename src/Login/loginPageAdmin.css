@@ -2,7 +2,7 @@
 body{
     margin: 0;
     padding: 0;
-    background: url(./SignupBG.jpg);
+    background: url(./AdminPageBG.jfif);
     background-size:cover;
     background-position: center;
     font-family: Roboto;
@@ -11,11 +11,11 @@ body{
 .loginbox{
     width: 300px;
     height: 380px;
-    background :rgba(rgb(0, 0, 0), rgb(0, 0, 0), rgb(254, 254, 255), alpha);
+    background :rgba(256,256,256, 50%);
     color: #1c2541;
-    top: 50%;
+    top: 55%;
     left: 50%;
-            
+    border-radius: 5%;
     position: relative;
     transform: translate(-50%,-50%);
     box-sizing: border-box;
@@ -70,30 +70,6 @@ form{
     color: #fff;
     font-size: 25px;
     border-radius: 20px;
-}
-
-.redirect
-{
-    color: #1c2541;
-    font: "ROBOTO" MONO;
-    font-size: 18px;
-    padding-left: 90px
-
-
-}.redirect2
-{
-    color: #1c2541;
-    font: "ROBOTO" MONO;
-    font-size: 18px;
-    padding-left: 20px
-}
-.redirect1
-{
-    color: #1c2541;
-    font: "ROBOTO" MONO;
-    font-size: 18px;
-    padding-left: 10px;
-    
 }
 .loginbox input[type="submit"]:hover
 {
