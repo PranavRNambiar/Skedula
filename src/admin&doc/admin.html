@@ -65,8 +65,12 @@
     <!--Inital logo and Title Completed-->
 
     <div class="btn-group" style ="float:centre;">
-     
-            <button type="button"id="action-btn" >View</button><br>
+ <nobr style="align:center">    <button class="dbbutton" type= "button"id="action-btn2">Update</button>
+  <button class="dbbutton" type= "button"id="action-btn3">Deletion</button>
+  <button  class="dbbutton1" type= "button"id="action-btn4">Insert</button>
+
+         <button  class="dbbutton" type="button"id="action-btn1" >View</button><br>
+        </nobr>
             <table class='table' id="table" border="100">
               <tbody>
                   
@@ -78,8 +82,16 @@
               function el(selector) {
                   return document.getElementById(selector);
               }
-      
-              el('action-btn').addEventListener('click', function(){
+              function ul(selector){
+                return document.getElementById(selector);
+              }
+       function dl(selector){
+          return document.getElementById(selector);
+       }
+       function sl(selector){
+         return document.getElementById(selector);
+       }
+              el('action-btn1').addEventListener('click', function(){
                   // Get the mysql service
                   getFirstTenRows(function(rows){
                       var html = '';
@@ -93,6 +105,7 @@
                           html += row.fName;
                           html += '</td>';
                           html += '</tr>';
+                         
                           
 
                       });
@@ -100,8 +113,84 @@
                       document.querySelector('#table > tbody').innerHTML = html;
                   });
               },false);
+//for update
+              ul('action-btn2').addEventListener('click', function(){
+                  // Get the mysql service
+                  getUpdate(function(rows){
+                      var html = '';
       
-              function getFirstTenRows(callback){
+                      
+      
+                      document.querySelector('#table > tbody').innerHTML = html;
+                  });
+              },false);
+//function delete
+              dl('action-btn3').addEventListener('click', function(){
+                  // Get the mysql service
+                  getDeleted(function(rows){
+                      var html = '';
+      
+                      
+      
+                      document.querySelector('#table > tbody').innerHTML = html;
+                  });
+              },false);
+//function to Insert
+            sl('action-btn4').addEventListener('click', function(){
+                  // Get the mysql service
+                  getInserted(function(rows){
+                      var html = '';
+      
+                      
+      
+                      document.querySelector('#table > tbody').innerHTML = html;
+                  });
+              },false);
+
+              //to View the table 
+       function getFirstTenRows(callback){
+        var mysql = require('mysql');
+      
+      // Add the credentials to access your database
+      var connection = mysql.createConnection({
+          host     : 'localhost',
+          user     : 'root',
+          password : null,
+          database : 'hmsdb'
+      });
+
+      // connect to mysql
+      connection.connect(function(err) {
+          // in case of error
+          if(err){
+              console.log(err.code);
+              console.log(err.fatal);
+          }
+      });
+
+      // Perform a query
+      $query = ' Select * from `doctor`;'
+
+      connection.query($query, function(err, rows, fields) {
+          if(err){
+              console.log("An error ocurred performing the query.");
+              console.log(err);
+              return;
+          }
+
+          callback(rows);
+
+          console.log("Query succesfully executed");
+      });
+
+      // Close the connection
+      connection.end(function(){
+          // The connection has been closed
+      });
+  }
+
+       //TO Update the table
+              function getUpdate(callback){
                   var mysql = require('mysql');
       
                   // Add the credentials to access your database
@@ -122,7 +211,7 @@
                   });
       
                   // Perform a query
-                  $query = 'SELECT * FROM `doctor` ';
+                  $query = 'Update `doctor` SET fName="Update" where `DocID`="D006" ';
       
                   connection.query($query, function(err, rows, fields) {
                       if(err){
@@ -135,17 +224,90 @@
       
                       console.log("Query succesfully executed");
                   });
+                }
+      // to delete
+      function getDeleted(callback){
+                  var mysql = require('mysql');
       
+                  // Add the credentials to access your database
+                  var connection = mysql.createConnection({
+                      host     : 'localhost',
+                      user     : 'root',
+                      password : null,
+                      database : 'hmsdb'
+                  });
+      
+                  // connect to mysql
+                  connection.connect(function(err) {
+                      // in case of error
+                      if(err){
+                          console.log(err.code);
+                          console.log(err.fatal);
+                      }
+                  });
+      
+                  // Perform a query
+                  $query = 'DELETE FROM `doctor`where `fName`="Update" ';
+      
+                  connection.query($query, function(err, rows, fields) {
+                      if(err){
+                          console.log("An error ocurred performing the query.");
+                          console.log(err);
+                          return;
+                      }
+      
+                      callback(rows);
+      
+                      console.log("Query succesfully executed");
+                  });
                   // Close the connection
                   connection.end(function(){
                       // The connection has been closed
                   });
-              }
+
+                }
+                 //TO Insert into the table
+              function getInserted(callback){
+                  var mysql = require('mysql');
+      
+                  // Add the credentials to access your database
+                  var connection = mysql.createConnection({
+                      host     : 'localhost',
+                      user     : 'root',
+                      password : null,
+                      database : 'hmsdb'
+                  });
+      
+                  // connect to mysql
+                  connection.connect(function(err) {
+                      // in case of error
+                      if(err){
+                          console.log(err.code);
+                          console.log(err.fatal);
+                      }
+                  });
+                
+                  // Perform a query
+                  $query = 'INSERT INTO `doctor`(`DocID`,`pwd`,`fName`,`sName`,`Spec`) VALUES ("D006","digialph","Raj","Kapoor","ORT") ';
+      
+                  connection.query($query, function(err, rows, fields) {
+                      if(err){
+                          console.log("An error ocurred performing the query.");
+                          console.log(err);
+                          return;
+                      }
+      
+                      callback(rows);
+      
+                      console.log("Query succesfully executed");
+                  });
+                }
+              
           </script> 
          
 
  
-
+<!-- 
   
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Edit
@@ -158,9 +320,9 @@
   </div>
   <div id="demox">
     <body>
-      <div class="schedulebox"> <!--creating a class called login box-->
+      <div class="schedulebox"> <!--creating a class called login box
       
-          <h1>Please fill the Patient details</h1>
+          <!-- <h1>Please fill the Patient details</h1>
           <form action="" method="">
             <p>User ID</p>
               <input type="text" name="PatID" placeholder="Enter the Patient ID" maxlength="4">  
@@ -182,7 +344,7 @@
 
   <div id="eemox">
     <body>
-      <div class="schedulebox"> <!--creating a class called login box-->
+      <div class="schedulebox"> creating a class called login box 
       
           <h1>Please fill the Doctor details</h1>
           <p>User ID</p>
@@ -205,9 +367,9 @@
 <div>
   <div id="femox">
     <body>
-      <div class="schedulebox"> <!--creating a class called login box-->
+      <div class="schedulebox"> <!--creating a class called login box-
       
-          <h1>Please fill the Receptionist details</h1>
+          /*<h1>Please fill the Receptionist details</h1>
           <p>User ID</p>
               <input type="text" name="RID" id="RID" placeholder="Enter the Receptionist ID" maxlength="4">  
           <p>First Name</p>
@@ -222,10 +384,10 @@
           </form>
       </div>
   </body>
-  </html>
+  </html> 
   
 </div>
-  <script>
+  <script> */
     
   function updateFunctionR(){
     var formData=getdata();
