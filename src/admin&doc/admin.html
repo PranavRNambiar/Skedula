@@ -162,12 +162,14 @@
       
           <h1>Please fill the Patient details</h1>
           <form action="" method="">
-              <p>First Name</p>
-              <input type="text" name="Uname" placeholder="Update the name" maxlength="30">
+            <p>User ID</p>
+              <input type="text" name="PatID" placeholder="Enter the Patient ID" maxlength="4">  
+            <p>First Name</p>
+              <input type="text" name="fnameP" placeholder="Update the name" maxlength="15">
               <p>Second Name</p>
-              <input type="text" name="Uname1" placeholder="Update the name"maxlength="30" >
+              <input type="text" name="snameP" placeholder="Update the name"maxlength="10" >
               <p>Password</p>
-              <input type="text" name="Uname2" placeholder="Update password" maxlength="10" required  >
+              <input type="text" name="pwdP" placeholder="Update password" maxlength="10" required  >
               <br/>
               <button type="submit" class="registerbtn3">Update the changes</button>
           
@@ -183,12 +185,14 @@
       <div class="schedulebox"> <!--creating a class called login box-->
       
           <h1>Please fill the Doctor details</h1>
+          <p>User ID</p>
+              <input type="text" name="DID" placeholder="Enter the Doctor ID" maxlength="4">  
           <p>First Name</p>
-              <input type="text" name="Uname" placeholder="Update the name" maxlength="30" >
+              <input type="text" name="fnameD" placeholder="Update the name" maxlength="15" >
               <p>Second Name</p>
-              <input type="text" name="Uname1" placeholder="Update the name" maxlength="30" >
+              <input type="text" name="snameD" placeholder="Update the name" maxlength="10" >
               <p>Password</p>
-              <input type="text" name="Uname2"  placeholder="Update password"  maxlength="10" required>
+              <input type="text" name="pwdD"  placeholder="Update password"  maxlength="10" required>
               <br/>
               <button type="submit" class="registerbtn3">Update the changes</button>
           
@@ -204,14 +208,16 @@
       <div class="schedulebox"> <!--creating a class called login box-->
       
           <h1>Please fill the Receptionist details</h1>
+          <p>User ID</p>
+              <input type="text" name="RID" id="RID" placeholder="Enter the Receptionist ID" maxlength="4">  
           <p>First Name</p>
-              <input type="text" name="Uname" placeholder="Update the name" maxlength="30">
+              <input type="text" name="fnameR" id="fnameR" placeholder="Update the name" maxlength="30">
               <p>Second Name</p>
-              <input type="text" name="Uname1" placeholder="Update the name" maxlength="30">
+              <input type="text" name="snameR" id="snameR" placeholder="Update the name" maxlength="30">
               <p>Password</p>
-              <input type="text" name="Uname2" placeholder="Update password" maxlength="10" required>
+              <input type="text" name="pwdR" id="pwdR" placeholder="Update password" maxlength="10" required>
               <br/>
-              <button type="submit" class="registerbtn3">Update the changes</button>
+              <button type="submit" onlclick="updateFunctionR()"class="registerbtn3">Update the changes</button>
           
           </form>
       </div>
@@ -220,8 +226,43 @@
   
 </div>
   <script>
-  /* When the user clicks on the button, 
+    
+  function updateFunctionR(){
+    var formData=getdata();
+    console.log(formData["fnameR"])
+    var sql=require('mysql')
+    var con=sql.createConnection({
+      host     : 'localhost',
+      user     : 'root',
+      password : null,
+      database : 'hmsdb'
+    })
+
+    con.connect(function(err){
+      if(err) throw err;
+      var sl="UPDATE `receptionist` SET fName='"+formData["fnameR"]+"',sNameR='"+formData["snameR"]+"',pwd='"+formData["pwdR"]+"WHERE RID='"+formData["RID"]+"'";
+      con.query(sl,function(err,result)
+      {
+        if(err) throw err;
+        console.log("Record updated");
+      })
+
+    })
+  }
+  function getdata(){
+      var formData={};
+      formData["RID"]=document.getElementsByID("RID").value;
+      formData["fnameR"]=document.getElementsByID("fnameR").value;
+      formData["snameR"]=document.getElementsByID("snameR").value;
+      formData["pwdR"]=document.getElementsByID("pwdR").value;
+      }
+
+  function edittable(data){
+
+  }
+/* When the user clicks on the button, 
   toggle between hiding and showing the dropdown content */
+  
   function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
