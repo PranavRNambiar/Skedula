@@ -10,7 +10,7 @@ The database used is  MySQL running on the Apache web sever.
 
 ## Database Design:
 ### ER DIAGRAM:
-<img src="Images/ER DIAGRAM.jpg" alt="ER DIAGRAM">
+<img src="C:\Users\prana\Pictures.jpg" alt="ER DIAGRAM">
 <p align="center">Most Updated version of the ER Diagram</p>  
 
 ### The Relational database model has the following tables:
